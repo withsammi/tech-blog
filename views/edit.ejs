@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <%-include("partials/header.ejs")  %>
+    <form action="/edit/<%= index %>" method="post"> 
+    <label for="title">Title for the post</label> <br>
+    <input type="text" id ="title" name="title" value="<%= post.title %>" required><br>
+
+    <label for="text-area">content for post</label> <br>
+    <textarea name="content" id="text-area" required> <%= post.content %></textarea><br>
+    
+    <button type="submit">SUBMIT</button>
+    </form>
+
+    <%-include("partials/footer.ejs")  %>
+    
+</body>
+</html>
